@@ -1443,7 +1443,6 @@ else:
                     'bid_ask_spread': bid_ask_spread,
                     'commissioni': commissioni,
                     'tasse': tasse,
-                    'decay_exponent': decay_exponent,
                     'beta': beta_portafoglio,
                 }
                 
