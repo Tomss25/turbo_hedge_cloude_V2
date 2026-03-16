@@ -148,7 +148,7 @@ with st.sidebar.expander("🎲 Volatilità e Greeks", expanded=True):
         )
         
         if vol_method == "Automatica (da Prezzo Turbo)":
-            st.info(f"💡 Usando prezzo Turbo: €{prezzo_iniziale:.2f}")
+            st.info("💡 La volatilità verrà calibrata automaticamente dal prezzo di mercato del Turbo")
             
             # Will calculate after params are set
             volatility = 0.20  # Placeholder, will be updated
