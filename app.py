@@ -148,7 +148,7 @@ with st.sidebar.expander("🎲 Volatilità e Greeks", expanded=True):
         )
         
         if vol_method == "Automatica (da Prezzo Turbo)":
-            st.info(f"💡 Usando prezzo Turbo: €{prezzo_iniziale:.2f}")
+            st.info("💡 La volatilità verrà calibrata automaticamente dal prezzo di mercato del Turbo")
             
             # Will calculate after params are set
             volatility = 0.20  # Placeholder, will be updated
@@ -1345,10 +1345,13 @@ else:
             )
         
         with strat_col3:
-            turbo_maturity_days = st.selectslider(
+            turbo_maturity_days = st.slider(
                 "Scadenza Turbo (giorni)",
-                options=[30, 60, 90, 120],
-                value=60
+                min_value=30,
+                max_value=365,
+                value=90,
+                step=30,
+                help="Giorni a scadenza del certificato Turbo"
             )
         
         # Advanced parameters
@@ -1440,7 +1443,6 @@ else:
                     'bid_ask_spread': bid_ask_spread,
                     'commissioni': commissioni,
                     'tasse': tasse,
-                    'decay_exponent': decay_exponent,
                     'beta': beta_portafoglio,
                 }
                 
