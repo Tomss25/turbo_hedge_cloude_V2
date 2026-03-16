@@ -1345,10 +1345,13 @@ else:
             )
         
         with strat_col3:
-            turbo_maturity_days = st.selectslider(
+            turbo_maturity_days = st.slider(
                 "Scadenza Turbo (giorni)",
-                options=[30, 60, 90, 120],
-                value=60
+                min_value=30,
+                max_value=365,
+                value=90,
+                step=30,
+                help="Giorni a scadenza del certificato Turbo"
             )
         
         # Advanced parameters
